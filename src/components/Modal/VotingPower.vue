@@ -15,7 +15,7 @@
       </div>
       <div v-for="(pool, i) in gov.votingPowerByPools" :key="i" class="d-flex">
         <span
-          v-text="`Balancer pool ${_shorten(i)}`"
+          v-text="`xDefi pool ${_shorten(i)}`"
           class="flex-auto text-gray mr-1"
         />
         <a

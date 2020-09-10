@@ -12,7 +12,7 @@ import { version } from '@/../package.json';
 import namespaces from '@/namespaces.json';
 
 const state = {
-  namespace: namespaces['balancer'],
+  namespace: namespaces['xdefi'],
   votingPower: 0,
   votingPowerByPools: {},
   walletBalance: 0,
@@ -134,6 +134,7 @@ const actions = {
       let votingPowers = {};
       if (!bptDisabled) {
         votingPowers = await dispatch('getVotingPowers', {
+          // token: result.proposal.msg.token,
           token: result.proposal.msg.token,
           blockTag,
           addresses
