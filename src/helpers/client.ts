@@ -1,9 +1,9 @@
-let defaultRestApi = 'http://localhost:3000';
+let defaultRestApi = 'http:/8.210.221.121/hapi';
 const domainName = window.location.hostname;
-if (domainName === 'beta.vote.balancer.finance')
-  defaultRestApi = 'https://beta.vote.balancer.finance';
-if (domainName === 'vote.balancer.finance')
-  defaultRestApi = 'https://vote.balancer.finance';
+if (domainName === 'vote.kovan.xdefi.com')
+  defaultRestApi = 'https://vote.kovan.xdefi.com';
+if (domainName === 'vote.xdefi.com')
+  defaultRestApi = 'https://vote.xdefi.com';
 const restApi = process.env.VUE_APP_REST_API || defaultRestApi;
 
 class Client {

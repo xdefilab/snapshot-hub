@@ -110,25 +110,29 @@ const actions = {
     }
   },
   getProposal: async ({ commit, dispatch, rootState }, payload) => {
-    commit('GET_PROPOSAL_REQUEST');
+  commit('GET_PROPOSAL_REQUEST');
+  console.log(1);
     try {
       const result: any = {};
       const [proposal, votes] = await Promise.all([
         ipfs.get(payload.id),
         client.request(`${payload.token}/proposal/${payload.id}`)
-      ]);
+	]);
+	console.log(2)
       result.proposal = formatProposal(proposal);
       result.proposal.ipfsHash = payload.id;
       result.votes = votes;
       const bptDisabled = !!result.proposal.bpt_voting_disabled;
       const { snapshot } = result.proposal.msg.payload;
       const blockTag =
-        snapshot > rootState.web3.blockNumber ? 'latest' : parseInt(snapshot);
+      snapshot > rootState.web3.blockNumber ? 'latest' : parseInt(snapshot);
+      console.log(3);
       const votersBalances = await dispatch('getVotersBalances', {
         token: payload.token,
         addresses: Object.values(result.votes).map((vote: any) => vote.address),
         blockTag
-      });
+	});
+	console.log(4);
       // @ts-ignore
       const addresses = Object.keys(votes);
       let votingPowers = {};
@@ -139,7 +143,8 @@ const actions = {
           blockTag,
           addresses
         });
-      }
+	}
+	console.log(5);
       result.votes = Object.fromEntries(
         Object.entries(result.votes)
           .map((vote: any) => {
@@ -151,7 +156,8 @@ const actions = {
           })
           .sort((a, b) => b[1].balance - a[1].balance)
           .filter(vote => vote[1].balance > 0)
-      );
+	  );
+	 console.log(6);
       result.results = {
         totalVotes: result.proposal.msg.payload.choices.map(
           (choice, i) =>

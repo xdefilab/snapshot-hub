@@ -145,7 +145,8 @@ export default {
         token: this.namespace.token,
         id: this.id
       });
-      if (proposalObj != 'undefined') {
+	console.log(proposalObj);
+      if (proposalObj != undefined) {
         this.proposal = proposalObj.proposal;
         this.votes = proposalObj.votes;
         this.results = proposalObj.results;
