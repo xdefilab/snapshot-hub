@@ -122,6 +122,7 @@ const actions = {
       result.proposal = formatProposal(proposal);
       result.proposal.ipfsHash = payload.id;
       result.votes = votes;
+      console.log(result);
       const bptDisabled = !!result.proposal.bpt_voting_disabled;
       const { snapshot } = result.proposal.msg.payload;
       const blockTag =
@@ -206,10 +207,12 @@ const actions = {
     const balances: any = {};
     try {
       const [, response] = await multi.aggregate(calls, { blockTag });
+      console.log(blockTag);
       response.forEach((value, i) => {
         balances[addresses[i]] = parseFloat(formatEther(value.toString()));
       });
       commit('GET_VOTERS_BALANCES_SUCCESS');
+      console.log(balances);
       return balances;
     } catch (e) {
       commit('GET_VOTERS_BALANCES_FAILURE', e);

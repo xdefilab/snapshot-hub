@@ -30,7 +30,7 @@
   "develop": {
     "network": "homestead",
     "chainId": 42,
-    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
+    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefikovan",
     "hubUrl": "https://vote.kovan.xdefi.com",
     "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
     "connectors": {
@@ -58,7 +58,7 @@
   "local": {
     "network": "homestead",
     "chainId": 42,
-    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
+    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefikovan",
     "hubUrl": "http://8.210.221.121:3000",
     "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
     "connectors": {
