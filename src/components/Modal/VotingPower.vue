@@ -19,7 +19,7 @@
           class="flex-auto text-gray mr-1"
         />
         <a
-          :href="`https://pools.balancer.exchange/#/pool/${i}`"
+          :href="`https://pool.xdefi.com/#/pool/${i}`"
           target="_blank"
         >
           {{ $n(pool) }} {{ gov.namespace.symbol }}

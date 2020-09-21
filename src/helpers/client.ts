@@ -1,4 +1,4 @@
-let defaultRestApi = 'http:/8.210.221.121/hapi';
+let defaultRestApi = 'http://127.0.0.1:3000/hapi';
 const domainName = window.location.hostname;
 if (domainName === 'vote.kovan.xdefi.com')
   defaultRestApi = 'https://vote.kovan.xdefi.com';

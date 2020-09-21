@@ -12,8 +12,8 @@
               <img
                 src="~/@/assets/logo.svg"
                 class="mr-2 v-align-middle"
-                width="32"
-                height="32"
+                width="110"
+                height="30"
               />
             </router-link>
           </div>
