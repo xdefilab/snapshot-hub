@@ -1,109 +1,228 @@
 <template>
-  <Sticky class="mb-4">
-    <nav id="topnav" class="border-bottom width-full bg-black">
-      <Container>
-        <div class="d-flex flex-items-center" style="height: 78px;">
-          <div class="flex-auto d-flex flex-items-center">
-            <router-link
-              :to="{ name: 'home' }"
-              class="d-inline-block text-blue d-flex"
-              style="padding-top: 2px;"
-            >
-              <img
-                src="~/@/assets/logo.svg"
-                class="mr-2 v-align-middle"
-                width="110"
-                height="30"
-              />
-            </router-link>
-          </div>
-          <div :key="web3.account">
-            <template v-if="web3.account && !wrongNetwork">
-              <UiButton
-                @click="modalVotingPowerOpen = true"
-                :loading="loading"
-                class="button-outline mr-2"
-              >
-                {{ _numeral(gov.votingPower) }}
-                {{ gov.namespace.symbol }}
-              </UiButton>
-              <UiButton
-                @click="modalOpen = true"
-                class="button-outline"
-                :loading="loading"
-              >
-                <Avatar :address="web3.account" size="16" class="mr-2 ml-n1" />
-                <span v-if="web3.name" v-text="web3.name" />
-                <span v-else v-text="_shorten(web3.account)" />
-              </UiButton>
-            </template>
-            <UiButton
-              v-if="web3.injectedLoaded && wrongNetwork"
-              class="text-red"
-            >
-              <Icon name="warning" class="ml-n1 mr-1 v-align-middle" />
-              Wrong network
-            </UiButton>
-            <UiButton
-              v-if="showLogin"
-              @click="modalOpen = true"
-              :loading="loading"
-            >
-              Connect wallet
-            </UiButton>
-            <UiButton @click="modalAboutOpen = true" class="ml-2">
-              <span v-text="'?'" class="ml-n1 mr-n1" />
-            </UiButton>
-          </div>
+  <el-header id="topnav" class="position-fixed width-full" height="78px">
+    <div
+      class="d-flex flex-items-center px-3"
+      style="height: 78px; justify-content: space-between;"
+    >
+      <div class="d-flex flex-items-center logo">
+        <router-link
+          :to="{ name: 'home' }"
+          class="d-inline-block text-blue d-flex"
+          style="margin-right: 48px;"
+        >
+          <img src="~/@/assets/xdefi.svg" class="mr-2 v-align-middle" />
+        </router-link>
+      </div>
+      <div class="navsList">
+        <div class="navContent">
+          <span class="active">
+            {{ $t('nav.statistics') }}
+            <b></b>
+          </span>
+          <Navs />
         </div>
-        <ModalAccount
-          :open="modalOpen"
-          @close="modalOpen = false"
-          @login="handleLogin"
-        />
-        <ModalAbout :open="modalAboutOpen" @close="modalAboutOpen = false" />
-        <ModalVotingPower
-          :open="modalVotingPowerOpen"
-          @close="modalVotingPowerOpen = false"
-        />
-      </Container>
-    </nav>
-  </Sticky>
+        <i class="el-icon-s-fold navIcon" @click="drawer = true" />
+        <el-drawer
+          :visible.sync="drawer"
+          :show-close="false"
+          :wrapperClosable="true"
+          size="30%"
+          class="drawer"
+        >
+          <Navs />
+        </el-drawer>
+      </div>
+      <NavWallet />
+      <div class="settings">
+        <el-select v-model="$i18n.locale" style="width: 100px;">
+          <el-option
+            v-for="item in langOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          >
+          </el-option>
+        </el-select>
+      </div>
+    </div>
+    <ModalAccount
+      :open="modalOpen"
+      @close="modalOpen = false"
+      @login="handleLogin"
+    />
+  </el-header>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import Navs from './Navs';
 
 export default {
+  components: {
+    Navs
+  },
   data() {
     return {
+      drawer: false,
       loading: false,
       modalOpen: false,
       modalAboutOpen: false,
-      modalVotingPowerOpen: false
+      menus: false,
+      langOptions: [
+        {
+          value: 'zh',
+          label: '简体中文'
+        },
+        {
+          value: 'en',
+          label: 'English'
+        }
+      ]
     };
   },
   computed: {
     wrongNetwork() {
-console.log(this.config.chainId);
-console.log(this.web3.injectedChainId);
       return this.config.chainId !== this.web3.injectedChainId;
     },
     showLogin() {
       return (
-        (!this.web3.account && !this.web3.injectedLoaded) ||
-        (!this.web3.account && !this.wrongNetwork)
+        (!this.$auth.isAuthenticated && !this.web3.injectedLoaded) ||
+        (!this.$auth.isAuthenticated && !this.wrongNetwork)
       );
     }
   },
   methods: {
+    ...mapActions(['toggleSidebar']),
     ...mapActions(['login']),
     async handleLogin(connector) {
       this.modalOpen = false;
       this.loading = true;
       await this.login(connector);
       this.loading = false;
+    },
+    toolgeMenu() {
+      this.menus = !this.menus;
+    },
+    changeLang(lang) {
+      this.$i18n.locale = lang;
     }
   }
 };
 </script>
+
+<style scoped lang="scss">
+@import '../vars';
+
+#topnav {
+  background-color: $panel-background;
+  z-index: 3000;
+}
+.more {
+  display: none;
+}
+.lang-menu {
+  background-color: $panel-background;
+  .van-dropdown-menu__bar {
+    background-color: transparent !important;
+    color: #7e7f9c;
+  }
+}
+.navsList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex: auto;
+  @media (max-width: 768px) {
+    flex: 1;
+  }
+}
+
+.navIcon {
+  font-size: 1.25rem;
+  color: #fff;
+  display: none;
+}
+
+.settings {
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 768px) {
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: #1c1c38;
+    z-index: 999;
+    .accounts {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
+
+.navContent {
+  display: flex;
+  justify-content: flex-start;
+  .active {
+    font-size: 16px;
+    color: #7e7f9c;
+    white-space: nowrap;
+    margin-right: 3rem;
+    display: none;
+    & > b {
+      width: 20px;
+      height: 4px;
+      background: linear-gradient(
+        137deg,
+        #2bf7dd 0%,
+        #3a8ff7 51%,
+        #da37fa 100%
+      );
+      border-radius: 3px;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+    &:hover b,
+    b {
+      display: block;
+    }
+  }
+  @media (max-width: 768px) {
+    .active {
+      display: inline-block;
+    }
+    .navs {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    a {
+      margin-right: 20px;
+      width: 40px;
+      overflow: hidden;
+    }
+  }
+  .navIcon {
+    display: block;
+  }
+  .nav {
+    justify-content: space-between;
+    a {
+      margin-right: 0;
+    }
+  }
+  .more {
+    display: block;
+    float: right;
+  }
+  .menus {
+    display: none !important;
+  }
+}
+</style>

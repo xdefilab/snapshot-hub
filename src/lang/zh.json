@@ -1,0 +1,32 @@
+{
+  "table":{
+    "name": "名称",
+    "symbol": "币种",
+    "liquidity": "流通量",
+    "volume":"成交量",
+    "price":"价格",
+    "delta": "涨跌幅",
+    "time": "时间",
+    "account": "账户",
+    "totalValue": "估值",
+    "tokens": "资产",
+    "swapFee": "手续费",
+    "swapCount": "交易量",
+    "lastSwapVolume": "过去24小时锁仓量",
+    "totalShares": "份额",
+    "tokenAmount":"总量({symbol})",
+    "tokenAmountExchange": "总量({symbol})"
+  },
+  "nav": {
+    "swap": "兑换",
+    "pool": "资金池",
+    "farming": "激励",
+    "dao": "治理",
+    "statistics": "统计",
+    "community": "社区",
+    "connect-wallet": "连接钱包"
+  },
+  "messages": {
+    "EMPTY_STATE": "暂无数据"
+  }
+}
