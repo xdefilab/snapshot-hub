@@ -53,6 +53,17 @@ export default new VueI18n({
         style: 'currency',
         currency: 'CNY',
         currencyDisplay: 'symbol'
+      },
+      price: {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 6
+      },
+      percent: {
+        style: 'percent',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
       }
     }
   }
