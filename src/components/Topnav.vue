@@ -16,7 +16,7 @@
       <div class="navsList">
         <div class="navContent">
           <span class="active">
-            {{ $t('nav.statistics') }}
+            {{ $t('nav.dao') }}
             <b></b>
           </span>
           <Navs />
