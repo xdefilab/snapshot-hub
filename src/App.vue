@@ -6,6 +6,7 @@
       <div class="pb-6 overflow-hidden">
         <router-view :key="$route.path" class="flex-auto" />
       </div>
+      <Footer />
     </div>
     <Notifications />
   </div>

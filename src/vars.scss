@@ -16,6 +16,44 @@ $text-blue: $blue;
 $text-green: $green;
 $text-red: $red;
 $bg-gray-dark: lighten($black, 2);
+$link-text: #82b1ff;
+$warning: #ffc780;
+$error: #ff8a80;
+$info: #7685d5;
+$input-hover-border: #4c5480;
+$primary-button-background:rgba(252, 237, 62, 1);
+$primary-button-background-hover: lighten($primary-button-background, 0.8);
+$primary-button-border: rgba(240,240,240, 0.3);
+$primary-button-text: #1F2049;
+$secondary-button-background:rgba(39, 41, 88, 1);
+$secondary-button-background-hover:lighten($secondary-button-background, 0.8);
+$secondary-button-border:  rgba(240,240,240, 0.3);
+$secondary-button-text: #56588e;
+$button-disabled: #c0c5e4;
+$button-disabled-text: #777;
+$panel-border: #41476b;
+$panel-background: #161638;
+$panel-header-background: #282932;
+$highlighted-selector-border: #7785d5;
+
+// PrimerCSS
+$black: #1F2049;
+$border: 1px solid $panel-border;
+$bg-blue: #384AFF;
+$bg-blue-light: #F7F8FC;
+$bg-gray: #90a4ae;
+$bg-green: #21b66f;
+$text-blue: #384AFF;
+$text-red: #ff8a80;
+$blue-100: #DCE2FF;
+$gray: $bg-gray;
+$text-gray: $gray;
+$blue: #7685d5;
+$blue-900: #41476b;
+$gray-dark: #282a32;
+$bg-gray-dark: $gray-dark;
+
+$border-radius: 4px;
 
 $body-font-size: 18px;
 $body-line-height: 1.4;
