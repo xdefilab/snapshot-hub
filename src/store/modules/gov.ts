@@ -195,6 +195,7 @@ const actions = {
       commit('GET_PROPOSAL_FAILURE', e);
     }
   },
+
   getVotersBalances: async ({ commit }, { token, addresses, blockTag }) => {
     commit('GET_VOTERS_BALANCES_REQUEST');
     const multi = new Contract(config.multicall, abi['Multicall'], wsProvider);
@@ -219,6 +220,33 @@ const actions = {
       return Promise.reject();
     }
   },
+  getVotersBalances2: async ({ commit }, { token, addresses, blockTag }) => {
+    commit('GET_VOTERS_BALANCES_REQUEST');
+    const multi = new Contract(config.multicall, abi['Multicall'], wsProvider);
+    const calls = [];
+    const testToken = new Interface(abi.TestToken);
+    addresses.forEach(address => {
+      // @ts-ignore
+      calls.push([token, testToken.encodeFunctionData('balanceOf', [address])]);
+    });
+    const balances: any = {};
+    try {
+      const [, response] = await multi.aggregate(calls, { blockTag });
+      console.log(blockTag);
+      response.forEach((value, i) => {
+        balances[addresses[i]] = parseFloat(formatEther(value.toString()));
+      });
+      commit('GET_VOTERS_BALANCES_SUCCESS');
+      console.log(balances);
+      return balances;
+    } catch (e) {
+      commit('GET_VOTERS_BALANCES_FAILURE', e);
+      return Promise.reject();
+    }
+  },
+
+
+
   getMyVotingPower: async ({ commit, dispatch, rootState }) => {
     commit('GET_MY_VOTING_POWER_REQUEST');
     const address = rootState.web3.account;
