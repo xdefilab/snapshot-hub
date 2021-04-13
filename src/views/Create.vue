@@ -111,10 +111,10 @@ export default {
         choices: ['', ''],
         start: '',
         end: '',
-        snapshot: ''
+        snapshot: '',
       },
       modalOpen: false,
-      selectedDate: ''
+      selectedDate: '',
     };
   },
   computed: {
@@ -137,7 +137,7 @@ export default {
         this.form.choices.length >= 2 &&
         this.form.choices.reduce((a, b) => (!a ? false : b), true)
       );
-    }
+    },
   },
   methods: {
     ...mapActions(['send']),
@@ -159,20 +159,20 @@ export default {
         const { ipfsHash } = await this.send({
           token: this.namespace.token,
           type: 'proposal',
-          payload: this.form
+          payload: this.form,
         });
         this.$router.push({
           name: 'proposal',
           params: {
             key: this.key,
-            id: ipfsHash
-          }
+            id: ipfsHash,
+          },
         });
       } catch (e) {
         console.error(e);
         this.loading = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>

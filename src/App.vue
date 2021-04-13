@@ -17,10 +17,10 @@ import { mapActions } from 'vuex';
 
 export default {
   methods: {
-    ...mapActions(['init'])
+    ...mapActions(['init']),
   },
   mounted() {
     this.init();
-  }
+  },
 };
 </script>

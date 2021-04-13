@@ -17,7 +17,11 @@
             <State :proposal="proposal" class="mb-4" />
             <UiMarkdown :body="payload.body" class="mb-6" />
           </div>
-          <Block v-if="ts >= payload.start && ts < payload.end" class="mb-4" title="Cast your vote">
+          <Block
+            v-if="ts >= payload.start && ts < payload.end"
+            class="mb-4"
+            title="Cast your vote"
+          >
             <div class="mb-3">
               <UiButton
                 v-for="(choice, i) in payload.choices"
@@ -33,9 +37,14 @@
               :loading="voteLoading"
               @click="modalOpen = true"
               class="d-block width-full button--submit"
-            >Vote</UiButton>
+              >Vote</UiButton
+            >
           </Block>
-          <BlockVotes :namespace="namespace" :proposal="proposal" :votes="votes" />
+          <BlockVotes
+            :namespace="namespace"
+            :proposal="proposal"
+            :votes="votes"
+          />
         </div>
         <div class="col-12 col-lg-4 float-left">
           <Block title="Informations">
@@ -48,11 +57,19 @@
             </div>
             <div class="mb-1">
               <b>Author</b>
-              <User :address="proposal.address" :verified="namespace.verified" class="float-right" />
+              <User
+                :address="proposal.address"
+                :verified="namespace.verified"
+                class="float-right"
+              />
             </div>
             <div class="mb-1">
               <b>IPFS</b>
-              <a :href="_ipfsUrl(proposal.ipfsHash)" target="_blank" class="float-right">
+              <a
+                :href="_ipfsUrl(proposal.ipfsHash)"
+                target="_blank"
+                class="float-right"
+              >
                 #{{ proposal.ipfsHash.slice(0, 7) }}
                 <Icon name="external-link" class="ml-1" />
               </a>
@@ -60,11 +77,17 @@
             <div>
               <div class="mb-1">
                 <b>Start date</b>
-                <span v-text="$d(payload.start * 1e3, 'long')" class="float-right text-white" />
+                <span
+                  v-text="$d(payload.start * 1e3, 'long')"
+                  class="float-right text-white"
+                />
               </div>
               <div class="mb-1">
                 <b>End date</b>
-                <span v-text="$d(payload.end * 1e3, 'long')" class="float-right text-white" />
+                <span
+                  v-text="$d(payload.end * 1e3, 'long')"
+                  class="float-right text-white"
+                />
               </div>
               <div class="mb-1">
                 <b>Snapshot</b>
@@ -122,7 +145,7 @@ export default {
       results: [],
       modalOpen: false,
       selectedChoice: 0,
-      votingPower: 0
+      votingPower: 0,
     };
   },
   computed: {
@@ -136,28 +159,28 @@ export default {
     },
     ts() {
       return (Date.now() / 1e3).toFixed();
-    }
+    },
   },
   methods: {
     ...mapActions(['getProposal']),
     async loadProposal() {
       const proposalObj = await this.getProposal({
         token: this.namespace.token,
-        id: this.id
+        id: this.id,
       });
-	console.log(proposalObj);
+      console.log(proposalObj);
       if (proposalObj != undefined) {
         this.proposal = proposalObj.proposal;
         this.votes = proposalObj.votes;
         this.results = proposalObj.results;
       }
-    }
+    },
   },
   async created() {
     this.loading = true;
     await this.loadProposal();
     this.loading = false;
     this.loaded = true;
-  }
+  },
 };
 </script>

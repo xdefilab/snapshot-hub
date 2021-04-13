@@ -1,6 +1,6 @@
-# Balancer gov
+# XDEX gov
 
-Off-chain voting interface for Balancer governance.
+Off-chain voting interface for XDEX governance.
 
 ## Project setup
 ```

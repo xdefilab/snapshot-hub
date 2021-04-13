@@ -39,9 +39,9 @@ export default {
   data() {
     return {
       namespaces: Object.fromEntries(
-        Object.entries(namespaces).filter(namespace => namespace[1].visible)
-      )
+        Object.entries(namespaces).filter((namespace) => namespace[1].visible)
+      ),
     };
-  }
+  },
 };
 </script>

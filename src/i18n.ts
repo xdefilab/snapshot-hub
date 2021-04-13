@@ -8,63 +8,63 @@ Vue.use(VueI18n);
 const locale = 'en-US';
 
 export default new VueI18n({
-  locale,
-  messages: {
-    'en-US': en,
-    'zh-CN': zh
-  },
-  dateTimeFormats: {
-    'en-US': {
-      short: {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric'
-      },
-      long: {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric'
-      }
-    }
-  },
-  numberFormats: {
-    'en-US': {
-      currency: {
-        style: 'currency',
-        currency: 'USD'
-      },
-      price: {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 6
-      },
-      percent: {
-        style: 'percent',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2
-      }
+    locale,
+    messages: {
+        'en-US': en,
+        'zh-CN': zh
     },
-    'zh-CN': {
-      currency: {
-        style: 'currency',
-        currency: 'CNY',
-        currencyDisplay: 'symbol'
-      },
-      price: {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 6
-      },
-      percent: {
-        style: 'percent',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2
-      }
+    dateTimeFormats: {
+        'en-US': {
+            short: {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric'
+            },
+            long: {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric'
+            }
+        }
+    },
+    numberFormats: {
+        'en-US': {
+            currency: {
+                style: 'currency',
+                currency: 'USD'
+            },
+            price: {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 6
+            },
+            percent: {
+                style: 'percent',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2
+            }
+        },
+        'zh-CN': {
+            currency: {
+                style: 'currency',
+                currency: 'USD',
+                currencyDisplay: 'symbol'
+            },
+            price: {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 6
+            },
+            percent: {
+                style: 'percent',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2
+            }
+        }
     }
-  }
 });

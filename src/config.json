@@ -1,86 +1,41 @@
 {
-  "master": {
-    "network": "homestead",
-    "chainId": 1,
-    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefi",
-    "hubUrl": "https://vote.xdefi.com",
-    "multicall": "0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441",
-    "connectors": {
-      "injected": {
-        "id": "injected",
-        "name": "MetaMask"
-      },
-      "portis": {
-        "id": "portis",
-        "name": "Portis",
-        "options": {
-          "dappId": "3f1c3cfc-7dd5-4e8a-aa03-71ff7396d9fe",
-          "network": "mainnet"
+    "master": {
+        "network": "homestead",
+        "chainId": 1,
+        "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefidex",
+        "hubUrl": "https://vote.xdefi.com",
+        "multicall": "0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441",
+        "connectors": {
+            "injected": {
+                "id": "injected",
+                "name": "MetaMask"
+            }
         }
-      },
-      "fortmatic": {
-        "id": "fortmatic",
-        "name": "Fortmatic",
-        "options": {
-          "apiKey": "pk_live_9CE8FD92E54684ED"
+    },
+    "develop": {
+        "network": "homestead",
+        "chainId": 42,
+        "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/basekovanv3",
+        "hubUrl": "https://vote.kovan.xdefi.com",
+        "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
+        "connectors": {
+            "injected": {
+                "id": "injected",
+                "name": "MetaMask"
+            }
         }
-      }
+    },
+    "local": {
+        "network": "homestead",
+        "chainId": 42,
+        "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/basekovanv3",
+        "hubUrl": "http://127.0.0.1:3000",
+        "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
+        "connectors": {
+            "injected": {
+                "id": "injected",
+                "name": "MetaMask"
+            }
+        }
     }
-  },
-  "develop": {
-    "network": "homestead",
-    "chainId": 42,
-    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefikovan",
-    "hubUrl": "https://vote.kovan.xdefi.com",
-    "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
-    "connectors": {
-      "injected": {
-        "id": "injected",
-        "name": "MetaMask"
-      },
-      "portis": {
-        "id": "portis",
-        "name": "Portis",
-        "options": {
-          "dappId": "3f1c3cfc-7dd5-4e8a-aa03-71ff7396d9fe",
-          "network": "kovan"
-        }
-      },
-      "fortmatic": {
-        "id": "fortmatic",
-        "name": "Fortmatic",
-        "options": {
-          "apiKey": "pk_live_9CE8FD92E54684ED"
-        }
-      }
-    }
-  },
-  "local": {
-    "network": "homestead",
-    "chainId": 42,
-    "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefikovan",
-    "hubUrl": "http://127.0.0.1:3000",
-    "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
-    "connectors": {
-      "injected": {
-        "id": "injected",
-        "name": "MetaMask"
-      },
-      "portis": {
-        "id": "portis",
-        "name": "Portis",
-        "options": {
-          "dappId": "3f1c3cfc-7dd5-4e8a-aa03-71ff7396d9fe",
-          "network": "kovan"
-        }
-      },
-      "magic": {
-        "id": "magic",
-        "name": "Magic",
-        "options": {
-          "apiKey": "pk_live_9CE8FD92E54684ED"
-        }
-      }
-    }
-  }
 }

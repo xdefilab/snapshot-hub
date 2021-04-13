@@ -1,32 +1,32 @@
 {
-  "table":{
-    "name": "Name",
-    "symbol": "Symbol",
-    "liquidity": "Liquidity",
-    "volume":"Volume",
-    "price":"Price",
-    "delta": "Delta",
-    "time": "Time",
-    "account": "Account",
-    "totalValue": "Total Value",
-    "tokens": "Assets",
-    "swapFee": "Fee",
-    "swapCount": "Count",
-    "lastSwapVolume": "Volume",
-    "totalShares": "Shares",
-    "tokenAmount":"Token Amount ({symbol})",
-    "tokenAmountExchange": "Token Amount ({symbol})"
-  },
-  "nav": {
-    "swap": "Swap",
-    "pool": "Pool",
-    "farming": "Farm",
-    "dao": "Vote",
-    "statistics": "Stat",
-    "community": "Forum",
-    "connect-wallet": "Connect Wallet"
-  },
-  "messages": {
-    "EMPTY_STATE": "No results found"
-  }
+    "table": {
+        "name": "Name",
+        "symbol": "Symbol",
+        "liquidity": "Liquidity",
+        "volume": "Volume",
+        "price": "Price",
+        "delta": "Delta",
+        "time": "Time",
+        "account": "Account",
+        "totalValue": "Total Value",
+        "tokens": "Assets",
+        "swapFee": "Fee",
+        "swapCount": "Count",
+        "lastSwapVolume": "Volume",
+        "totalShares": "Shares",
+        "tokenAmount": "Token Amount ({symbol})",
+        "tokenAmountExchange": "Token EXchange Amount ({symbol})"
+    },
+    "nav": {
+        "swap": "Swap",
+        "pool": "Pool",
+        "farming": "Farm",
+        "dao": "Vote",
+        "statistics": "Stat",
+        "community": "Forum",
+        "connect-wallet": "Connect Wallet"
+    },
+    "messages": {
+        "EMPTY_STATE": "No results found"
+    }
 }

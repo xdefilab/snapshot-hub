@@ -1,27 +1,27 @@
 {
-  "xdefi": {
-    "key": "xdefi",
-    "symbol": "XDEX",
-    "name": "xdefi",
-    "token": "0x7e9e6020aAAA0eB32112c4b1F8485C089d6aD3e8",
-    "verified": [
-      "0x166e43F85aAB57E43680144A0721e89572B5b676",
-      "0xEEFbE69df4C33F020fa112129B56B042c20E2763",
-      "0x45055661D18Ab2759b6Df86415A7E2f982f0ca19",
-      "0x54be6df7b1c9fee57af2e8255bf319da65e4c0c0"
-    ],
-    "visible": true
-  },
-  "dai": {
-    "key": "dai",
-    "symbol": "DAI",
-    "name": "DAI",
-    "token": "0xF0d0EB522cfa50B716B3b1604C4F0fA6f04376AD",
-    "verified": [
-      "0xeF8305E140ac520225DAf050e2f71d5fBcC543e7",
-      "0x107174D70b33523E83711EA4C3F4229cdB8A7Cb1",
-      "0x0b21Dbc34A953a35dFA629ad31e1cEE3dE0433Fb"
-    ],
-    "visible": false
-  }
+    "xdefi": {
+        "key": "xdefi",
+        "symbol": "XDEX",
+        "name": "XDEX",
+        "token": "0x8c3d80F8af60672EE7A728AB90E1FE21114E2711",
+        "verified": [
+            "0x166e43F85aAB57E43680144A0721e89572B5b676",
+            "0xEEFbE69df4C33F020fa112129B56B042c20E2763",
+            "0x45055661D18Ab2759b6Df86415A7E2f982f0ca19",
+            "0x54be6df7b1c9fee57af2e8255bf319da65e4c0c0"
+        ],
+        "visible": true
+    },
+    "dai": {
+        "key": "dai",
+        "symbol": "DAI",
+        "name": "DAI",
+        "token": "0xF0d0EB522cfa50B716B3b1604C4F0fA6f04376AD",
+        "verified": [
+            "0xeF8305E140ac520225DAf050e2f71d5fBcC543e7",
+            "0x107174D70b33523E83711EA4C3F4229cdB8A7Cb1",
+            "0x0b21Dbc34A953a35dFA629ad31e1cEE3dE0433Fb"
+        ],
+        "visible": false
+    }
 }
