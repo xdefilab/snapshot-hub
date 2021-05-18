@@ -3,6 +3,7 @@
         "network": "homestead",
         "chainId": 1,
         "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xdefidex",
+        "halflifeSubgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/xhalflife",
         "hubUrl": "https://vote.xdefi.com",
         "multicall": "0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441",
         "connectors": {
@@ -13,9 +14,10 @@
         }
     },
     "develop": {
-        "network": "homestead",
+        "network": "kovan",
         "chainId": 42,
         "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/basekovanv3",
+        "halflifeSubgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/halflifekovanv3",
         "hubUrl": "https://vote.kovan.xdefi.com",
         "multicall": "0xAA51dcBf641a2D79223562d3faD27d1dEaFBc50b",
         "connectors": {
@@ -26,7 +28,7 @@
         }
     },
     "local": {
-        "network": "homestead",
+        "network": "kovan",
         "chainId": 42,
         "subgraphUrl": "https://api.thegraph.com/subgraphs/name/xdefilab/basekovanv3",
         "hubUrl": "http://127.0.0.1:3000",

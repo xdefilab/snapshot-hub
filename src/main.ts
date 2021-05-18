@@ -14,23 +14,23 @@ import '@/style.scss';
 import ElementUI from 'element-ui';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-    faMediumM,
-    faGithub,
-    faWeixin,
-    faDiscord,
-    faTelegramPlane,
-    faTwitter
+  faMediumM,
+  faGithub,
+  faWeixin,
+  faDiscord,
+  faTelegramPlane,
+  faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import 'element-ui/lib/theme-chalk/index.css';
 
 library.add(
-    faMediumM,
-    faGithub,
-    faWeixin,
-    faDiscord,
-    faTelegramPlane,
-    faTwitter
+  faMediumM,
+  faGithub,
+  faWeixin,
+  faDiscord,
+  faTelegramPlane,
+  faTwitter
 );
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
@@ -40,11 +40,11 @@ Vue.use(TextareaAutosize);
 
 const requireComponent = require.context('@/components', true, /[\w-]+\.vue$/);
 requireComponent.keys().forEach(fileName => {
-    const componentConfig = requireComponent(fileName);
-    const componentName = upperFirst(
-        camelCase(fileName.replace(/^\.\//, '').replace(/\.\w+$/, ''))
-    );
-    Vue.component(componentName, componentConfig.default || componentConfig);
+  const componentConfig = requireComponent(fileName);
+  const componentName = upperFirst(
+    camelCase(fileName.replace(/^\.\//, '').replace(/\.\w+$/, ''))
+  );
+  Vue.component(componentName, componentConfig.default || componentConfig);
 });
 
 Vue.component('jazzicon', Jazzicon);
@@ -54,8 +54,8 @@ Vue.directive('autofocus', autofocus);
 Vue.config.productionTip = false;
 
 new Vue({
-    i18n,
-    router,
-    store,
-    render: h => h(App)
+  i18n,
+  router,
+  store,
+  render: h => h(App)
 }).$mount('#app');

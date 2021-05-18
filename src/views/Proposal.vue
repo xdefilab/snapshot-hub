@@ -89,7 +89,7 @@
                   class="float-right text-white"
                 />
               </div>
-              <div class="mb-1">
+              <!-- <div class="mb-1">
                 <b>Snapshot</b>
                 <a
                   :href="_etherscanLink(payload.snapshot, 'block')"
@@ -99,7 +99,7 @@
                   {{ $n(payload.snapshot) }}
                   <Icon name="external-link" class="ml-1" />
                 </a>
-              </div>
+              </div> -->
             </div>
           </Block>
           <BlockResults
@@ -130,7 +130,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import namespaces from '@/namespaces.json';
+import namespaces from '@/helpers/namespaces';
 
 export default {
   data() {
@@ -145,7 +145,7 @@ export default {
       results: [],
       modalOpen: false,
       selectedChoice: 0,
-      votingPower: 0,
+      votingPower: 0
     };
   },
   computed: {
@@ -159,14 +159,14 @@ export default {
     },
     ts() {
       return (Date.now() / 1e3).toFixed();
-    },
+    }
   },
   methods: {
     ...mapActions(['getProposal']),
     async loadProposal() {
       const proposalObj = await this.getProposal({
         token: this.namespace.token,
-        id: this.id,
+        id: this.id
       });
       console.log(proposalObj);
       if (proposalObj != undefined) {
@@ -174,13 +174,13 @@ export default {
         this.votes = proposalObj.votes;
         this.results = proposalObj.results;
       }
-    },
+    }
   },
   async created() {
     this.loading = true;
     await this.loadProposal();
     this.loading = false;
     this.loaded = true;
-  },
+  }
 };
 </script>

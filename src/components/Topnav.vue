@@ -1,5 +1,5 @@
 <template>
-  <el-header id="topnav" class="position-fixed width-full" height="78px">
+  <el-header id="topnav" class="width-full" height="78px">
     <div
       class="d-flex flex-items-center px-3"
       style="height: 78px; justify-content: space-between;"

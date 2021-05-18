@@ -61,7 +61,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import namespaces from '@/namespaces.json';
+import namespaces from '@/helpers/namespaces';
 
 export default {
   data() {
@@ -69,7 +69,7 @@ export default {
       loading: false,
       loaded: false,
       proposals: {},
-      selectedState: 'All',
+      selectedState: 'All'
     };
   },
   computed: {
@@ -92,7 +92,7 @@ export default {
       if (this.totalProposals === 0) return {};
       return Object.fromEntries(
         Object.entries(this.proposals)
-          .filter((proposal) => {
+          .filter(proposal => {
             if (!this.namespace.verified.includes(proposal[1].address))
               return false;
             if (this.selectedState === 'All') return true;
@@ -118,16 +118,17 @@ export default {
           })
           .sort((a, b) => b[1].msg.payload.end - a[1].msg.payload.end, 0)
       );
-    },
+    }
   },
   methods: {
-    ...mapActions(['getProposals']),
+    ...mapActions(['getProposals'])
   },
   async created() {
     this.loading = true;
     this.proposals = await this.getProposals(this.namespace.token);
+    console.log(this.proposals);
     this.loading = false;
     this.loaded = true;
-  },
+  }
 };
 </script>
