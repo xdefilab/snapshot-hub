@@ -3,11 +3,12 @@
         "key": "xdefi",
         "symbol": "XDEX",
         "name": "xdefi",
-        "token": "0x7e9e6020aAAA0eB32112c4b1F8485C089d6aD3e8",
+        "token": "0xD88b39C71b183AC37362d5A8E620b676502F8F91",
         "verified": [
             "0x166e43F85aAB57E43680144A0721e89572B5b676",
             "0xEEFbE69df4C33F020fa112129B56B042c20E2763",
             "0x45055661D18Ab2759b6Df86415A7E2f982f0ca19",
+            "0x847Dc5Ea89c407f1416f23D87B40CE317798E133",
             "0x54be6df7b1c9fee57af2e8255bf319da65e4c0c0"
         ],
         "visible": true

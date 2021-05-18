@@ -12,9 +12,7 @@
         >
           <UiButton class="button-outline width-full v-align-middle">
             <img
-              :src="
-                `~/@/assets/logo.png`
-              "
+              :src="`~/@/assets/logo.png`"
               height="28"
               width="28"
               class="mr-1 v-align-middle"

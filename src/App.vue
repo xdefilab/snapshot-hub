@@ -3,7 +3,7 @@
     <UiLoading v-if="ui.loading || !ui.init" class="overlay big" />
     <div v-else>
       <Topnav />
-      <div class="pb-6 overflow-hidden">
+      <div class="pb-6 overflow-hidden py-4">
         <router-view :key="$route.path" class="flex-auto" />
       </div>
       <Footer />
@@ -17,10 +17,10 @@ import { mapActions } from 'vuex';
 
 export default {
   methods: {
-    ...mapActions(['init']),
+    ...mapActions(['init'])
   },
   mounted() {
     this.init();
-  },
+  }
 };
 </script>

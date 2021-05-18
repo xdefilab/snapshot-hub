@@ -2,8 +2,8 @@
     "xdefi": {
         "key": "xdefi",
         "symbol": "XDEX",
-        "name": "XDEX",
-        "token": "0x000000000000d0151E748d25b766e77efe2A6c83",
+        "name": "xdefi",
+        "token": "0xD88b39C71b183AC37362d5A8E620b676502F8F91",
         "verified": [
             "0x166e43F85aAB57E43680144A0721e89572B5b676",
             "0xEEFbE69df4C33F020fa112129B56B042c20E2763",
@@ -17,7 +17,7 @@
         "key": "dai",
         "symbol": "DAI",
         "name": "DAI",
-        "token": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "token": "0xde99c79533eeb1897d1d12df3e5437d498ba82a6",
         "verified": [
             "0xeF8305E140ac520225DAf050e2f71d5fBcC543e7",
             "0x107174D70b33523E83711EA4C3F4229cdB8A7Cb1",

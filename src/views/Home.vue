@@ -11,7 +11,7 @@
       >
         <Block class="text-center">
           <Token :address="namespace.token" size="128" class="mb-4" />
-          <div>
+          <div class="mt-4">
             <h2>{{ namespace.name }} {{ namespace.symbol }}</h2>
             <div v-if="namespace.verified.length > 0">
               <Avatar
@@ -39,9 +39,9 @@ export default {
   data() {
     return {
       namespaces: Object.fromEntries(
-        Object.entries(namespaces).filter((namespace) => namespace[1].visible)
-      ),
+        Object.entries(namespaces).filter(namespace => namespace[1].visible)
+      )
     };
-  },
+  }
 };
 </script>
